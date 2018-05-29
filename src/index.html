@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper eg-flex eg-flexDirectionColumn">
+        <header class="header">
+            <div class="header__overlay">
+                <h1>Player V1.0</h1>
+                <button id="openModal">ADD VIDEO TO PLAYLIST</button>
+            </div>
+        </header>
+        <div class="main eg-flexCenter eg-justifyContentCenter eg-sm-flexDirection-columnReverse">
+            <div class="main__list">
+                <h1>Videos list</h1>
+                <ul class="videos__list">
+                    <li class="video__info eg-flexCenter eg-justifyContentCenter">
+                        <div class="video__id">1</div>
+                        <div class="video__title">title</div>
+                        <div class="video__artist">artist</div>
+                        <div class="video__control">control</div>
+                    </li>
+                    <li class="video__info eg-flexCenter eg-justifyContentCenter">
+                        <div class="video__id">1</div>
+                        <div class="video__title">title</div>
+                        <div class="video__artist">artist</div>
+                        <div class="video__control">control</div>
+                    </li>
+                    <li class="video__info eg-flexCenter eg-justifyContentCenter">
+                        <div class="video__id">1</div>
+                        <div class="video__title">title</div>
+                        <div class="video__artist">artist</div>
+                        <div class="video__control">control</div>
+                    </li>
+                    <li class="video__info eg-flexCenter eg-justifyContentCenter">
+                        <div class="video__id">1</div>
+                        <div class="video__title">title</div>
+                        <div class="video__artist">artist</div>
+                        <div class="video__control">control</div>
+                    </li>
+                    <li class="video__info eg-flexCenter eg-justifyContentCenter">
+                        <div class="video__id">1</div>
+                        <div class="video__title">title<br></div>
+                        <div class="video__artist">artist</div>
+                        <div class="video__control">control</div>
+                    </li>
+                    <li class="video__info eg-flexCenter eg-justifyContentCenter">
+                        <div class="video__id">1</div>
+                        <div class="video__title">title</div>
+                        <div class="video__artist">artist</div>
+                        <div class="video__control">control</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="eg-flex11 eg-flexCenter">
+                <!--<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"-->
+                        <!--allowfullscreen-->
+                        <!--frameborder="0"-->
+                        <!--id="test"></iframe>-->
+                <!--<video width="320" height="240" controls>-->
+                <!--<source src="https://youtu.be/AaNZBrP26LQ">-->
+                <!--<source src="https://youtu.be/AaNZBrP26LQ">-->
+                <!--Your browser does not support the video tag.-->
+                <!--</video>-->
+
+                <div id="videoTest">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="videoModal">
+        <div class="modal__background"></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__content">
+                <h1 class="modal__info"></h1>
+                <div class="video__form__container" id="videoForm">
+                    <div>
+                        <legend><span class="number">1</span> Artist Info</legend>
+                        <input type="text" name="author" placeholder="Artist *">
+                    </div>
+                    <div>
+                        <legend><span class="number">2</span> Video Info</legend>
+                        <input type="text" name="title" placeholder="Title *">
+                        <input type="text" name="link" placeholder="Link *">
+                    </div>
+                    <button class="submit__btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="enjoyModal">
+        <div class="modal__background"></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__content">
+                <h1 class="modal__info">Please enjoy ;)</h1>
+                <button class="submit__btn">Ok</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="errorModal">
+        <div class="modal__background"></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__content">
+                <h1 class="modal__info">Sorry but we cann't add this video to the list :(</h1>
+                <button class="submit__btn">Ok</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

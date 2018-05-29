@@ -1,0 +1,114 @@
+// Extra small screen / phone
+/* Custom, iPhone Retina */
+$screen-i-xs:       320px !default;
+$screen-i-xs-min:   $screen-i-xs !default;
+$screen-i-phone:    $screen-i-xs-min !default;
+
+$screen-xs:         480px !default;
+$screen-xs-min:     $screen-xs !default;
+$screen-phone:      $screen-xs-min !default;
+
+// Small screen / tablet
+$screen-sm:         768px !default;
+$screen-sm-min:     $screen-sm !default;
+$screen-tablet:     $screen-sm-min !default;
+
+// Medium screen / desktop
+$screen-md:         1024px !default;
+$screen-md-min:     $screen-md !default;
+$screen-desktop:    $screen-md-min !default;
+
+// Large screen / wide desktop
+$screen-lg:         1200px !default;
+$screen-lg-min:     $screen-lg !default;
+$screen-lg-desktop: $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-i-xs-max:   ($screen-xs - 1) !default;
+$screen-xs-max:     ($screen-sm-min - 1) !default;
+$screen-sm-max:     ($screen-md-min - 1) !default;
+$screen-md-max:     ($screen-lg-min - 1) !default;
+
+// Flexbox
+.eg-justifyContentCenter {
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+.eg-justifyContentSpaceEvenly {
+  -webkit-box-pack: space-around !important;
+  -webkit-justify-content: space-around !important;
+  -ms-flex-pack: space-around !important;
+  justify-content: space-around !important;
+}
+
+.eg-flex {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.eg-flexWrap {
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  flex-wrap: wrap;
+}
+
+.eg-flexDirectionColumn {
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+
+.eg-sm-flexDirection-columnReverse {
+  @include lower-then-md-media {
+    -ms-flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
+  }
+}
+
+.eg-flexDirection-rowReverse {
+  -ms-flex-direction: row-reverse ;
+  flex-direction: row-reverse;
+}
+
+.eg-sm-flexCenter {
+  @include lower-then-md-media {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+    -webkit-align-items: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+  }
+}
+
+.eg-flexCenter {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+.eg-flexTop {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: start !important;
+  -webkit-align-items: flex-start !important;
+  -ms-flex-align: start !important;
+  align-items: flex-start !important;
+}
+
+.eg-flex0 { flex: 0 0 auto !important; }
+.eg-flex1 { flex: 1 0 auto !important; }
+.eg-flex11 { flex: 1 1 auto !important; }
+.wrapper { height: 100%; width: 100%; }

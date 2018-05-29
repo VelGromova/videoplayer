@@ -1,0 +1,159 @@
+@import "~compass-mixins";
+
+// Media
+/*==========  Mobile First Method  ==========*/
+@mixin higher-then-i-xs-media {
+  @media only screen and (min-width : $screen-xs-min) { @content }
+}
+
+@mixin higher-then-xs-media {
+  @media only screen and (min-width : $screen-sm-min) { @content }
+}
+
+@mixin higher-then-sm-media {
+  @media only screen and (min-width : $screen-md-min) { @content }
+}
+
+@mixin higher-then-md-media {
+  @media only screen and (min-width : $screen-lg-min) { @content }
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+@mixin lower-then-lg-media {
+  @media only screen and (max-width : $screen-lg) { @content }
+}
+
+@mixin lower-then-md-media {
+  @media only screen and (max-width : $screen-md) { @content }
+}
+
+@mixin lower-then-sm-media {
+  @media only screen and (max-width : $screen-sm) { @content }
+}
+
+@mixin lower-then-xs-media {
+  @media only screen and (max-width : $screen-xs) { @content }
+}
+
+/*==========  Only for some device width  ==========*/
+@mixin i-xs-media {
+  @media only screen and (max-width: $screen-i-xs-max) { @content }
+}
+
+@mixin xs-media {
+  @media only screen and (max-width: $screen-xs-max) { @content }
+}
+
+@mixin sm-media {
+  @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { @content }
+}
+
+@mixin md-media {
+  @media only screen and (min-width: $screen-md-min ) and (max-width: $screen-md-max) { @content }
+}
+
+@mixin lg-media {
+  @media only screen and (min-width: $screen-lg-min ) { @content }
+}
+
+@mixin media($min-width, $max-width: '') {
+  @if $max-width == '' {
+    @media only screen and (min-width: $min-width ) { @content }
+  } @else {
+    @media only screen and (min-width: $min-width ) and (max-width: $max-width) { @content }
+  }
+}
+
+// Effects
+@mixin transition($time) {
+  -webkit-transition: $time;
+  -moz-transition:    $time;
+  -o-transition:      $time;
+  transition:         $time;
+}
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
+
+@mixin transform-function($function) {
+  -webkit-transform: $function;
+  -moz-transform:    $function;
+  -o-transform:      $function;
+  -ms-transform:     $function;
+  transform:         $function;
+}
+
+@mixin transform ($percent) {
+  -webkit-transform: skew($percent);
+  -moz-transform:    skew($percent);
+  -o-transform:      skew($percent);
+  -ms-transform:     skew($percent);
+  transform:         skew($percent);
+}
+
+//Skewed button
+@mixin skewed ($number) {
+  @include transform(-$number);
+
+  span.st { //Straighten out the text
+    @include transform ($number);
+
+    display: block;
+  }
+}
+
+@mixin headers-color($the-headers-color) {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color: $the-headers-color;
+  }
+}
+
+@mixin striped($color-1, $color-2) {
+  background: $color-1;
+  background: -moz-linear-gradient(left, $color-1 0%, $color-1 12.5%, $color-1 12.5%, $color-2 12.5%, $color-2 25%, $color-2 25%, $color-1 25%, $color-1 37.5%, $color-2 37.5%, $color-2 50%, $color-2 50%, $color-1 50%, $color-1 62.5%, $color-1 62.5%, $color-2 62.5%, $color-2 75%, $color-1 75%, $color-1 87.5%, $color-1 87.5%, $color-2 87.5%, $color-2 100%, $color-2 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $color-1 0%,$color-1 12.5%,$color-1 12.5%,$color-2 12.5%,$color-2 25%,$color-2 25%,$color-1 25%,$color-1 37.5%,$color-2 37.5%,$color-2 50%,$color-2 50%,$color-1 50%,$color-1 62.5%,$color-1 62.5%,$color-2 62.5%,$color-2 75%,$color-1 75%,$color-1 87.5%,$color-1 87.5%,$color-2 87.5%,$color-2 100%,$color-2 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $color-1 0%,$color-1 12.5%,$color-1 12.5%,$color-2 12.5%,$color-2 25%,$color-2 25%,$color-1 25%,$color-1 37.5%,$color-2 37.5%,$color-2 50%,$color-2 50%,$color-1 50%,$color-1 62.5%,$color-1 62.5%,$color-2 62.5%,$color-2 75%,$color-1 75%,$color-1 87.5%,$color-1 87.5%,$color-2 87.5%,$color-2 100%,$color-2 100%);
+}
+
+// Align
+@mixin flex-align($align) {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align:      $align;
+  -webkit-align-items: $align;
+  -webkit-box-align:   $align;
+  align-items:         $align;
+}
+
+@mixin vertical-align($element-height, $parent-element-height) {
+  margin-top: (($parent-element-height - $element-height) / 2) !important;
+  margin-bottom: (($parent-element-height - $element-height) / 2) !important;
+}
+
+// Placeholder
+@mixin placeholder($color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}

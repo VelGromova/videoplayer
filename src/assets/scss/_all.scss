@@ -1,0 +1,11 @@
+@import "~normalize.css";
+html,
+body {
+  height: 100%;
+}
+
+@import "kernel/_all.scss";
+
+@import "_main";
+@import "_header";
+@import "_modal";

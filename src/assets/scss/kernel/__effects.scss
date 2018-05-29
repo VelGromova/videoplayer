@@ -1,0 +1,8 @@
+$default-transition-function: linear;
+$default-transition-duration: 0.2s;
+
+$background-color-transition-function: $default-transition-duration $default-transition-function background-color;
+
+%ef-transition-backgroundColor {
+  @include transition($background-color-transition-function);
+}

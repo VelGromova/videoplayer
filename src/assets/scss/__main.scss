@@ -1,0 +1,35 @@
+.main {
+  height: 100%;
+
+  &__list {
+    @include higher-then-sm-media {
+      width: 50%;
+    }
+
+    overflow-y: auto;
+    height: 100%;
+
+    .videos__list {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .video {
+    &__id {
+      width: 10%;
+    }
+
+    &__title {
+      width: 50%;
+    }
+
+    &__artist {
+      width: 20%;
+    }
+
+    &__control {
+      width: 20%;
+    }
+  }
+}
