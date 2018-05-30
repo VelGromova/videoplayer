@@ -25,10 +25,18 @@ export default class Form {
         return true;
     }
 
+    clearForm () {
+        let inputs = this.form.getElementsByTagName('input')
+        for (let index = 0; index < inputs.length; ++index) {
+            inputs[index].value = ''
+        }
+    }
+
     submit () {
         if (this.validate()) {
             let data = this.getData()
             this.onSubmitCallback(data)
+            this.clearForm()
         }
 
         return false;

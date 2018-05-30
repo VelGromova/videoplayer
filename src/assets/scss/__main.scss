@@ -13,9 +13,26 @@
       margin: 0;
       padding: 0;
     }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 50px;
+      text-align: center;
+    }
   }
 
   .video {
+    &__info {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 25px;
+
+      &__container {
+        border-bottom: 1px solid #8a97a0;
+        border-bottom-left-radius: 10px;
+        background-color: #f4f7f8;
+      }
+    }
     &__id {
       width: 10%;
     }
@@ -24,12 +41,26 @@
       width: 50%;
     }
 
-    &__artist {
+    &__author {
       width: 20%;
     }
 
     &__control {
       width: 20%;
+
+      span {
+        cursor: pointer;
+      }
+
+      &.active {
+        .icon-play {
+          @extend .icon-play-black;
+        }
+      }
+
+      .icon-play:hover {
+        @extend .icon-play-black;
+      }
     }
   }
 }

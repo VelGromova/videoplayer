@@ -60,28 +60,34 @@
     margin: 0;
     padding: 15px 30px;
 
+    .modal__info {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 35px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
     p:last-child { margin-bottom: 0; }
+
     .video__form__container{
       max-width: 500px;
       padding: 10px 20px;
       margin: 10px auto;
       border-radius: 8px;
-      font-family: Georgia, "Times New Roman", Times, serif;
 
       legend {
-        font-size: 1.4em;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 25px;
         margin-bottom: 10px;
       }
 
       input{
         @extend %ef-transition-backgroundColor;
 
-        font-family: Georgia, "Times New Roman", Times, serif;
         border: none;
         border-radius: 4px;
-        font-size: 20px;
         outline: 0;
-        padding: 7px;
+        padding: 10px;
         width: 100%;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -91,6 +97,8 @@
         -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
         box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
         margin: 0 0 30px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
 
         &:focus{
           background-color: #d2d9dd;
@@ -103,7 +111,8 @@
         height: 30px;
         width: 30px;
         display: inline-block;
-        font-size: 0.8em;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 25px;
         margin-right: 4px;
         line-height: 30px;
         text-align: center;
@@ -121,12 +130,13 @@
       padding: 19px 39px 18px 39px;
       color: #fff;
       background-color: #1abc9c;
-      font-size: 18px;
       text-align: center;
       font-style: normal;
       width: 100%;
       border: 1px solid #16a085;
       margin: 0 auto 10px;
+      font-family: 'Kaushan Script', cursive;
+      font-size: 25px;
 
       &:hover {
         background-color: #109177;
